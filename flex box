@@ -1,0 +1,48 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const parentStyle = {
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  height: '300px',
+  width: '700px',
+  backgroundColor: 'Violet',
+  border: '5px solid black',
+};
+
+const childStyle1 = {
+  width: '100px',
+  height: '100px',
+  backgroundColor: 'red',
+  border: '1px solid black',
+};
+const childStyle2 = {
+  width: '100px',
+  height: '100px',
+  backgroundColor: 'yellow',
+  border: '1px solid black',
+};
+const childStyle3 = {
+  width: '100px',
+  height: '100px',
+  backgroundColor: 'green',
+  border: '1px solid black',
+};
+const childStyle4 = {
+  width: '100px',
+  height: '100px',
+  backgroundColor: 'purple',
+  border: '1px solid black',
+};
+
+const ParentBox = () => {
+  return React.createElement('div', { style: parentStyle }, [
+    React.createElement('div', { key: 1, style: childStyle1 }, 'Child 1'),
+    React.createElement('div', { key: 2, style: childStyle2 }, 'Child 2'),
+    React.createElement('div', { key: 3, style: childStyle3 }, 'Child 3'),
+    React.createElement('div', { key: 4, style: childStyle4 }, 'Child 4'),
+  ]);
+};
+
+ReactDOM.render(React.createElement(ParentBox), document.getElementById('root'));
